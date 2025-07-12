@@ -1,0 +1,21 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+
+actor Aluno
+actor "Segurança (Admin)" as Admin
+
+rectangle "Sistema de Achados e Perdidos" {
+    Aluno --> (Buscar Doc)
+    Aluno --> (Página Principal)
+
+    Admin --> (Cadastrar Aluno)
+    Admin --> (Deletar)
+    Admin --> (Confirmar Dev)
+    Admin --> (Cadastrar Doc)
+    Admin --> (Página Principal)
+    Admin --> (Buscar Doc)
+
+}
+
+@enduml

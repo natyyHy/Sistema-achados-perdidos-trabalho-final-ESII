@@ -1,0 +1,38 @@
+@startuml
+
+skinparam classAttributeIconSize 0
+
+class "Aluno" as Aluno {
+    - id
+    - nome
+    - identificador
+}
+
+class "Seguranca" as Seguranca {
+    - id
+    - username
+    - senha
+}
+
+class "ItemPerdido" as ItemPerdido {
+    - id
+    - data
+    - tipoDocumento
+    - encontrado : boolean = false
+}
+
+
+enum "TipoDocumento" as TipoDocumento {
+    CPF
+    RG
+    CNH
+    OUTRO
+}
+
+
+Aluno "1" --> "*" ItemPerdido : possui
+Seguranca "1" --> "*" ItemPerdido : cadastra
+
+
+
+@enduml
