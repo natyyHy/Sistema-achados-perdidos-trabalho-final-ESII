@@ -1,0 +1,7 @@
+/home/thalisvm/SISTEMAACHADOSEPERDIDOS/src/main/java/br/edu/ifpi/catce/sistemaachadoseperdidos/SistemachadoseperdidosApplication.java
+/home/thalisvm/SISTEMAACHADOSEPERDIDOS/src/main/java/br/edu/ifpi/catce/sistemaachadoseperdidos/config/SecurityConfig.java
+/home/thalisvm/SISTEMAACHADOSEPERDIDOS/src/main/java/br/edu/ifpi/catce/sistemaachadoseperdidos/config/WebConfig.java
+/home/thalisvm/SISTEMAACHADOSEPERDIDOS/src/main/java/br/edu/ifpi/catce/sistemaachadoseperdidos/controller/AdmController.java
+/home/thalisvm/SISTEMAACHADOSEPERDIDOS/src/main/java/br/edu/ifpi/catce/sistemaachadoseperdidos/controller/UserCotroller.java
+/home/thalisvm/SISTEMAACHADOSEPERDIDOS/src/main/java/br/edu/ifpi/catce/sistemaachadoseperdidos/model/AlunoModel.java
+/home/thalisvm/SISTEMAACHADOSEPERDIDOS/src/main/java/br/edu/ifpi/catce/sistemaachadoseperdidos/repository/AlunoRepository.java

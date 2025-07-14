@@ -1,0 +1,7 @@
+br/edu/ifpi/catce/sistemaachadoseperdidos/config/SecurityConfig.class
+br/edu/ifpi/catce/sistemaachadoseperdidos/controller/UserCotroller.class
+br/edu/ifpi/catce/sistemaachadoseperdidos/config/WebConfig.class
+br/edu/ifpi/catce/sistemaachadoseperdidos/repository/AlunoRepository.class
+br/edu/ifpi/catce/sistemaachadoseperdidos/controller/AdmController.class
+br/edu/ifpi/catce/sistemaachadoseperdidos/model/AlunoModel.class
+br/edu/ifpi/catce/sistemaachadoseperdidos/SistemachadoseperdidosApplication.class

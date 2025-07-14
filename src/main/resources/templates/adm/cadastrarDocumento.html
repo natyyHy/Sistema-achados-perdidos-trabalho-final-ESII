@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layoutPadraoAdm.html}">
+
+<head>
+  <title>Cadastrar Documento</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <style>
+    #filtroInput {
+      margin-bottom: 10px;
+      width: 100%;
+      padding: 6px;
+    }
+  </style>
+</head>
+
+<body>
+<div layout:fragment="container">
+  <div class="contextGenerico">
+
+    <form method="post" th:action="@{/cadastrarDocumentoRealizado}" th:object="${itemPerdido}">
+      <p th:text="${mensagem}" th:class="${style}"></p>
+
+      <h2>Cadastrar Documento</h2>
+      <div class="mb-3">
+        <label class="form-label">Selecione o Aluno:</label>
+        <select class="form-control" id="alunoSelect" name="alunoId" required>
+          <option th:each="aluno : ${alunos}"
+                  th:value="${aluno.id}"
+                  th:text="${aluno.nome + ' - ' + aluno.identificador}"></option>
+        </select>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Tipo de Documento:</label>
+        <select class="form-control" th:field="*{tipoDocumento}" required>
+          <option th:value="CPF">CPF</option>
+          <option th:value="RG">RG</option>
+          <option th:value="CNH">CNH</option>
+          <option th:value="OUTRO">OUTRO</option>
+        </select>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Data:</label>
+        <input class="form-control" type="date" th:field="*{data}" required>
+      </div>
+
+      <input type="submit" class="btn btn-success" value="Cadastrar Documento">
+    </form>
+  </div>
+</div>
+
+</body>
+</html>

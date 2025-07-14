@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layoutPadraoAdm.html}">
+<head>
+    <title>BUSCAR</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<div layout:fragment="container">
+    <div class="contextGenerico">
+
+        <a href="buscaradm"><img th:src="${src}" width="20px"></a>
+
+        <p th:text="${mensagem}" th:class="${style}"></p>
+
+        <h2>Buscar</h2>
+        <br>
+        <form method="get" action="/resultadoBuscaAdm" th:object="${alunoModel}"
+              th:style="${stylePersonalizado}" >
+            <div class="mb-3">
+                <label class="form-label" for="nome">Nome do Aluno:</label>
+                <input class="form-control" id="nome" required type="text" th:field="*{nome}">
+            </div>
+            <br>
+            <input type="submit" class="btn btn-sucess" value="Buscar">
+        </form>
+        <div>
+            <table class="table table-bordered" style="text-align: center">
+                <thead>
+                <tr id="display" th:style="${display}" >
+                    <td scope="col" th:text="${nome}"></td>
+                    <td scope="col" th:text="${documento}"></td>
+                    <td scope="col" th:text="${data}"></td>
+                    <td scope="col" th:text="${acao}"></td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="aluno : ${alunoModelList}">
+                    <td th:text="${aluno.nome}">Nome</td>
+
+                    <td>
+                      <span th:each="item, iterStat : ${aluno.itensPerdidos}">
+                        <span th:text="${item.tipoDocumento}"></span><span th:if="${!iterStat.last}">, </span>
+                      </span>
+                    </td>
+
+                    <td>
+                      <span th:each="item, iterStat : ${aluno.itensPerdidos}">
+                        <span th:text="${item.data}"></span><span th:if="${!iterStat.last}">, </span>
+                      </span>
+                    </td>
+
+                    <td>
+                        <form method="get" th:action="@{/confirmar}">
+                            <input type="hidden" name="id" th:value="${aluno.id}"/>
+                            <button type="submit" class="btn btn-danger" style="font-size: 0.8em">EXCLUIR</button>
+                        </form>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>

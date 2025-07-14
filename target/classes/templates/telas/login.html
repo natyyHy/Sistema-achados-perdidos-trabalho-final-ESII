@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+            xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layoutPadrao.html}">
+<head>
+    <title>LOGIN</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/script.js" defer></script>
+</head>
+<body>
+<div layout:fragment="container">
+    <div class="contextGenerico">
+        <form method="post" th:action="@{/login}">
+            <p th:text="${mensagem}" th:class="${style}"></p>
+            <h2>Login</h2>
+            <h3>Acesse ao Sistema:</h3>
+            <br>
+            <div class="mb-3">
+                <label class="form-label" for="username">Usúario:</label>
+                <input class="form-control" type="text"  id="username" name="username" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="password">Senha:</label>
+                <div class="password-container">
+                    <input id="password" class="form-control" name="password"  type="password" required>
+                    <button type="button" class="password-toggle" aria-label="Show/Hide password">
+                        <img src="static/icons/eye-off.svg" alt="Toggle visibility" class="eye-icon">
+                    </button>
+                </div>
+            </div>
+
+            <br>
+            <input type="submit" class="btn btn-sucess" value="Acessar">
+        </form>
+    </div>
+</div>
+</body>
+</html>

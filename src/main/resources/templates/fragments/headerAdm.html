@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt" xmlns:th="http://www.thymeleaf.org">
+<body>
+<header th:fragment="headerAdm">
+  <a href="/indexadm"><img src="https://suap.ifpi.edu.br/media/configuracao/logo-ifpi-transp.png" alt="IFPI Logo"></a>
+  <nav>
+    <ul class="nav nav-underline">
+      <li class="nav-item">
+        <a class="nav-link" href="/buscaradm">Buscar</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/cadastraradm">Cadastrar Aluno</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/cadastrarDocumento">Cadastrar Documento</a>
+      </li>
+      <form th:action="@{/logout}" method="post" style="display:inline;">
+        <button id="logout" type="submit" title="Logout" style="background: none;border: none;">
+          <img src="/static/icons/sair-do-usuario.png" width="25px" alt="Logout Icon">
+        </button>
+      </form>
+    </ul>
+  </nav>
+</header>
+</body>
+
+</html>
